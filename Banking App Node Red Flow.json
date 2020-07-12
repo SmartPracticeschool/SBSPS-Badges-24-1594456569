@@ -1,0 +1,170 @@
+[
+    {
+        "id": "bf4c7bbe.efe9c8",
+        "type": "tab",
+        "label": "Text To Speech",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b1b11140.4e4ef",
+        "type": "inject",
+        "z": "bf4c7bbe.efe9c8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "Hello user  Please press a button to continue",
+        "payloadType": "str",
+        "x": 210,
+        "y": 200,
+        "wires": [
+            [
+                "e890fb98.243db8"
+            ]
+        ]
+    },
+    {
+        "id": "f2f2649a.0d0d98",
+        "type": "debug",
+        "z": "bf4c7bbe.efe9c8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "e890fb98.243db8",
+        "type": "watson-text-to-speech",
+        "z": "bf4c7bbe.efe9c8",
+        "name": "",
+        "lang": "en-US",
+        "langhidden": "en-US",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "en-US_LisaV2Voice",
+        "voicehidden": "en-US_LisaV2Voice",
+        "format": "audio/wav",
+        "password": "",
+        "apikey": "sb8OyKvS9tSp27mJ06hKyRq_3Wrx_mvu946994qqP-t9",
+        "payload-response": false,
+        "service-endpoint": "https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/285c3e70-5cf7-4f19-b6db-bbd676a2606b",
+        "x": 520,
+        "y": 200,
+        "wires": [
+            [
+                "c1debb6f.0c44b8"
+            ]
+        ]
+    },
+    {
+        "id": "c1debb6f.0c44b8",
+        "type": "play audio",
+        "z": "bf4c7bbe.efe9c8",
+        "name": "",
+        "voice": "",
+        "x": 710,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "7013ddd.d3ece24",
+        "type": "ui_button",
+        "z": "bf4c7bbe.efe9c8",
+        "name": "",
+        "group": "15e70895.08c717",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Balance",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "Your current savings account Balance is 17586.25 rupees ",
+        "payloadType": "str",
+        "topic": "",
+        "x": 300,
+        "y": 300,
+        "wires": [
+            [
+                "e890fb98.243db8",
+                "f2f2649a.0d0d98"
+            ]
+        ]
+    },
+    {
+        "id": "2496f9db.69a126",
+        "type": "ui_button",
+        "z": "bf4c7bbe.efe9c8",
+        "name": "",
+        "group": "70ec9e59.808d4",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Amount",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "Your last withdrawal amount is 2300.00 Rupees ",
+        "payloadType": "str",
+        "topic": "",
+        "x": 300,
+        "y": 420,
+        "wires": [
+            [
+                "e890fb98.243db8",
+                "f2f2649a.0d0d98"
+            ]
+        ]
+    },
+    {
+        "id": "15e70895.08c717",
+        "type": "ui_group",
+        "z": "",
+        "name": "Savings Account Balance",
+        "tab": "3c6d0e6c.9735f2",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "70ec9e59.808d4",
+        "type": "ui_group",
+        "z": "",
+        "name": "Last Withdrawal Amount",
+        "tab": "3c6d0e6c.9735f2",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "3c6d0e6c.9735f2",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Text to Speech",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
